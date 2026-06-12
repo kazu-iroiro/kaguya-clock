@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>kaguya-clock</title>
+</head>
+
+<body>
+    <main id="clock" class="clock">
+        <div id="clock-upside">
+            <div id="clock-date">
+                <!-- <span id="clock-date-1" class="date-digit">9</span> -->
+                <div id="clock-date-1" class="date-digit">
+                    <svg id="segment-a" data-name="segment-a" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 146.33 226.05">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: none;
+                                    stroke: #000;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                }
+                            </style>
+                        </defs>
+                        <g id="segment-a">
+                            <polyline id="segment-a-1" class="cls-1"
+                                points="145.83 101.75 132.61 114.97 118.03 100.82 118.03 32.5 118.03 32.48 140.83 9.28 140.83 9.28 145.83 14.28 145.83 101.66" />
+                            <polyline id="segment-a-2" class="cls-1"
+                                points="131.5 .67 14.15 .67 14.01 .67 10.35 4.32 28.68 30.52 29.15 30.52 115.43 30.52 115.45 30.52 138.71 7.26 138.52 7.06 131.96 .5" />
+                            <polyline id="segment-a-3" class="cls-1"
+                                points="145.5 128.11 134.33 116.93 134.03 117.27 118.03 132.39 118.03 132.52 118.03 201.52 118.03 201.76 139.2 218.61 145.83 212.25 145.83 128.58" />
+                            <polyline id="segment-a-4" class="cls-1"
+                                points="115.95 202.96 137.69 220.34 137.69 220.38 132.52 225.55 132.28 225.55 17.89 225.55 7.85 218.89 26.08 202.96 116.22 202.96" />
+                            <polyline id="segment-a-5" class="cls-1"
+                                points=".5 109.65 10.13 118.8 10.48 119.11 27.15 102.44 27.15 102.34 27.15 35.57 27.15 35.3 7.58 6.72 7.47 6.72 .54 13.12 .54 109.16" />
+                            <polyline id="segment-a-6" class="cls-1"
+                                points="115.46 130.03 24.58 130.03 24.46 129.92 14.13 120.55 31.6 102.89 114.46 102.89 114.63 102.89 129.54 117.03 115.65 130.03" />
+                            <polyline id="segment-a-7" class="cls-1"
+                                points="8.64 121.1 .85 128.89 .69 129.14 .69 213.96 .69 214.14 5.35 217.13 5.57 217.03 24.07 201.05 24.07 134.62 23.85 134.62 9.02 121.1" />
+                        </g>
+                    </svg>
+                </div>
+                <span id="clock-date-slash" class="date-digit">/</span>
+                <!-- <span id="clock-date-2" class="date-digit">12</span> -->
+                <div id="clock-date-2" class="date-digit">
+                    <svg id="segment-b" data-name="segment-b" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 143.85 228.37">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: none;
+                                    stroke: #000;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                }
+                            </style>
+                        </defs>
+                        <g id="segment-b">
+                            <polyline id="segment-b-1" class="cls-1"
+                                points="143.35 107.43 134.93 116.29 116.53 98.03 116.53 30.65 116.53 30.52 138.31 8.73 138.34 8.73 143.35 14.11 143.35 107.16" />
+                            <polyline id="segment-b-2" class="cls-1"
+                                points="128.5 .67 11.15 .67 8 4.31 8 9.15 8 9.33 25.68 28.43 114.55 28.43 135.72 7.26 135.53 7.06 128.96 .5" />
+                            <polyline id="segment-b-3" class="cls-1"
+                                points="143.29 127.41 134.44 119.05 121.31 132.14 121.31 200.49 139.52 217.22 143.35 213.6 143.35 213.55 143.35 127.54" />
+                            <polyline id="segment-b-4" class="cls-1"
+                                points="8.13 222.35 14.54 227.87 128.72 227.87 137.51 219.69 117.36 201.73 30.42 201.73 8.16 222.35" />
+                            <polyline id="segment-b-5" class="cls-1"
+                                points=".77 97.59 11.33 108.15 11.49 108.15 24.1 95.54 24.1 95.46 24.1 31.79 3.79 9.59 .54 13.68 .54 97.4" />
+                            <polyline id="segment-b-6" class="cls-1"
+                                points="113.88 100.9 24.1 100.9 13.84 111.16 13.81 111.16 28.48 127.35 121.31 127.35 130.97 117.69 130.92 117.64 114.06 101.04" />
+                            <polyline id="segment-b-7" class="cls-1"
+                                points=".67 123.71 11.34 113.48 11.33 113.43 26.45 130.44 26.45 200.76 26.45 200.93 5.33 220.23 5.39 220.23 .5 216.6 .5 123.95" />
+                        </g>
+                    </svg>
+                </div>
+
+                <div id="clock-date-3" class="date-digit">
+                    <svg id="segment-b" data-name="segment-b" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 143.85 228.37">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: none;
+                                    stroke: #000;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                }
+                            </style>
+                        </defs>
+                        <g id="segment-b">
+                            <polyline id="segment-b-1" class="cls-1"
+                                points="143.35 107.43 134.93 116.29 116.53 98.03 116.53 30.65 116.53 30.52 138.31 8.73 138.34 8.73 143.35 14.11 143.35 107.16" />
+                            <polyline id="segment-b-2" class="cls-1"
+                                points="128.5 .67 11.15 .67 8 4.31 8 9.15 8 9.33 25.68 28.43 114.55 28.43 135.72 7.26 135.53 7.06 128.96 .5" />
+                            <polyline id="segment-b-3" class="cls-1"
+                                points="143.29 127.41 134.44 119.05 121.31 132.14 121.31 200.49 139.52 217.22 143.35 213.6 143.35 213.55 143.35 127.54" />
+                            <polyline id="segment-b-4" class="cls-1"
+                                points="8.13 222.35 14.54 227.87 128.72 227.87 137.51 219.69 117.36 201.73 30.42 201.73 8.16 222.35" />
+                            <polyline id="segment-b-5" class="cls-1"
+                                points=".77 97.59 11.33 108.15 11.49 108.15 24.1 95.54 24.1 95.46 24.1 31.79 3.79 9.59 .54 13.68 .54 97.4" />
+                            <polyline id="segment-b-6" class="cls-1"
+                                points="113.88 100.9 24.1 100.9 13.84 111.16 13.81 111.16 28.48 127.35 121.31 127.35 130.97 117.69 130.92 117.64 114.06 101.04" />
+                            <polyline id="segment-b-7" class="cls-1"
+                                points=".67 123.71 11.34 113.48 11.33 113.43 26.45 130.44 26.45 200.76 26.45 200.93 5.33 220.23 5.39 220.23 .5 216.6 .5 123.95" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div id="clock-upside-separate"></div>
+            <div id="clock-dayofweek">
+                <span id="clock-dayofweek-value">木</span>
+            </div>
+        </div>
+        <div id="clock-downside">
+            <div id="clock-temp">
+                <div id="clock-temp-value1" class="temp-digit">
+                    <svg id="segment-b" data-name="segment-b" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 143.85 228.37">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: none;
+                                    stroke: #000;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                }
+                            </style>
+                        </defs>
+                        <g id="segment-b">
+                            <polyline id="segment-b-1" class="cls-1"
+                                points="143.35 107.43 134.93 116.29 116.53 98.03 116.53 30.65 116.53 30.52 138.31 8.73 138.34 8.73 143.35 14.11 143.35 107.16" />
+                            <polyline id="segment-b-2" class="cls-1"
+                                points="128.5 .67 11.15 .67 8 4.31 8 9.15 8 9.33 25.68 28.43 114.55 28.43 135.72 7.26 135.53 7.06 128.96 .5" />
+                            <polyline id="segment-b-3" class="cls-1"
+                                points="143.29 127.41 134.44 119.05 121.31 132.14 121.31 200.49 139.52 217.22 143.35 213.6 143.35 213.55 143.35 127.54" />
+                            <polyline id="segment-b-4" class="cls-1"
+                                points="8.13 222.35 14.54 227.87 128.72 227.87 137.51 219.69 117.36 201.73 30.42 201.73 8.16 222.35" />
+                            <polyline id="segment-b-5" class="cls-1"
+                                points=".77 97.59 11.33 108.15 11.49 108.15 24.1 95.54 24.1 95.46 24.1 31.79 3.79 9.59 .54 13.68 .54 97.4" />
+                            <polyline id="segment-b-6" class="cls-1"
+                                points="113.88 100.9 24.1 100.9 13.84 111.16 13.81 111.16 28.48 127.35 121.31 127.35 130.97 117.69 130.92 117.64 114.06 101.04" />
+                            <polyline id="segment-b-7" class="cls-1"
+                                points=".67 123.71 11.34 113.48 11.33 113.43 26.45 130.44 26.45 200.76 26.45 200.93 5.33 220.23 5.39 220.23 .5 216.6 .5 123.95" />
+                        </g>
+                    </svg>
+                </div>
+                <div id="clock-temp-value2" class="temp-digit">
+                    <svg id="segment-b" data-name="segment-b" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 143.85 228.37">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: none;
+                                    stroke: #000;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                }
+                            </style>
+                        </defs>
+                        <g id="segment-b">
+                            <polyline id="segment-b-1" class="cls-1"
+                                points="143.35 107.43 134.93 116.29 116.53 98.03 116.53 30.65 116.53 30.52 138.31 8.73 138.34 8.73 143.35 14.11 143.35 107.16" />
+                            <polyline id="segment-b-2" class="cls-1"
+                                points="128.5 .67 11.15 .67 8 4.31 8 9.15 8 9.33 25.68 28.43 114.55 28.43 135.72 7.26 135.53 7.06 128.96 .5" />
+                            <polyline id="segment-b-3" class="cls-1"
+                                points="143.29 127.41 134.44 119.05 121.31 132.14 121.31 200.49 139.52 217.22 143.35 213.6 143.35 213.55 143.35 127.54" />
+                            <polyline id="segment-b-4" class="cls-1"
+                                points="8.13 222.35 14.54 227.87 128.72 227.87 137.51 219.69 117.36 201.73 30.42 201.73 8.16 222.35" />
+                            <polyline id="segment-b-5" class="cls-1"
+                                points=".77 97.59 11.33 108.15 11.49 108.15 24.1 95.54 24.1 95.46 24.1 31.79 3.79 9.59 .54 13.68 .54 97.4" />
+                            <polyline id="segment-b-6" class="cls-1"
+                                points="113.88 100.9 24.1 100.9 13.84 111.16 13.81 111.16 28.48 127.35 121.31 127.35 130.97 117.69 130.92 117.64 114.06 101.04" />
+                            <polyline id="segment-b-7" class="cls-1"
+                                points=".67 123.71 11.34 113.48 11.33 113.43 26.45 130.44 26.45 200.76 26.45 200.93 5.33 220.23 5.39 220.23 .5 216.6 .5 123.95" />
+                        </g>
+                    </svg>
+                </div>
+                <span id="clock-temp-unit">°C</span>
+            </div>
+            <div id="clock-downside-separate"></div>
+            <div id="clock-time">
+                <!-- <span id="clock-hour" class="clock-digit">20</span> -->
+                <div id="clock-hour-value1" class="clock-digit">
+                    <svg id="segment-b" data-name="segment-b" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 143.85 228.37">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: none;
+                                    stroke: #000;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                }
+                            </style>
+                        </defs>
+                        <g id="segment-b">
+                            <polyline id="segment-b-1" class="cls-1"
+                                points="143.35 107.43 134.93 116.29 116.53 98.03 116.53 30.65 116.53 30.52 138.31 8.73 138.34 8.73 143.35 14.11 143.35 107.16" />
+                            <polyline id="segment-b-2" class="cls-1"
+                                points="128.5 .67 11.15 .67 8 4.31 8 9.15 8 9.33 25.68 28.43 114.55 28.43 135.72 7.26 135.53 7.06 128.96 .5" />
+                            <polyline id="segment-b-3" class="cls-1"
+                                points="143.29 127.41 134.44 119.05 121.31 132.14 121.31 200.49 139.52 217.22 143.35 213.6 143.35 213.55 143.35 127.54" />
+                            <polyline id="segment-b-4" class="cls-1"
+                                points="8.13 222.35 14.54 227.87 128.72 227.87 137.51 219.69 117.36 201.73 30.42 201.73 8.16 222.35" />
+                            <polyline id="segment-b-5" class="cls-1"
+                                points=".77 97.59 11.33 108.15 11.49 108.15 24.1 95.54 24.1 95.46 24.1 31.79 3.79 9.59 .54 13.68 .54 97.4" />
+                            <polyline id="segment-b-6" class="cls-1"
+                                points="113.88 100.9 24.1 100.9 13.84 111.16 13.81 111.16 28.48 127.35 121.31 127.35 130.97 117.69 130.92 117.64 114.06 101.04" />
+                            <polyline id="segment-b-7" class="cls-1"
+                                points=".67 123.71 11.34 113.48 11.33 113.43 26.45 130.44 26.45 200.76 26.45 200.93 5.33 220.23 5.39 220.23 .5 216.6 .5 123.95" />
+                        </g>
+                    </svg>
+                </div>
+
+                <div id="clock-hour-value2" class="clock-digit">
+                    <svg id="segment-b" data-name="segment-b" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 143.85 228.37">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: none;
+                                    stroke: #000;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                }
+                            </style>
+                        </defs>
+                        <g id="segment-b">
+                            <polyline id="segment-b-1" class="cls-1"
+                                points="143.35 107.43 134.93 116.29 116.53 98.03 116.53 30.65 116.53 30.52 138.31 8.73 138.34 8.73 143.35 14.11 143.35 107.16" />
+                            <polyline id="segment-b-2" class="cls-1"
+                                points="128.5 .67 11.15 .67 8 4.31 8 9.15 8 9.33 25.68 28.43 114.55 28.43 135.72 7.26 135.53 7.06 128.96 .5" />
+                            <polyline id="segment-b-3" class="cls-1"
+                                points="143.29 127.41 134.44 119.05 121.31 132.14 121.31 200.49 139.52 217.22 143.35 213.6 143.35 213.55 143.35 127.54" />
+                            <polyline id="segment-b-4" class="cls-1"
+                                points="8.13 222.35 14.54 227.87 128.72 227.87 137.51 219.69 117.36 201.73 30.42 201.73 8.16 222.35" />
+                            <polyline id="segment-b-5" class="cls-1"
+                                points=".77 97.59 11.33 108.15 11.49 108.15 24.1 95.54 24.1 95.46 24.1 31.79 3.79 9.59 .54 13.68 .54 97.4" />
+                            <polyline id="segment-b-6" class="cls-1"
+                                points="113.88 100.9 24.1 100.9 13.84 111.16 13.81 111.16 28.48 127.35 121.31 127.35 130.97 117.69 130.92 117.64 114.06 101.04" />
+                            <polyline id="segment-b-7" class="cls-1"
+                                points=".67 123.71 11.34 113.48 11.33 113.43 26.45 130.44 26.45 200.76 26.45 200.93 5.33 220.23 5.39 220.23 .5 216.6 .5 123.95" />
+                        </g>
+                    </svg>
+                </div>
+                <span id="clock-colon" class="clock-digit">:</span>
+                <!-- <span id="clock-minute" class="clock-digit">58</span> -->
+                 <div id="clock-minute-value1" class="clock-digit">
+                    <svg id="segment-b" data-name="segment-b" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 143.85 228.37">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: none;
+                                    stroke: #000;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                }
+                            </style>
+                        </defs>
+                        <g id="segment-b">
+                            <polyline id="segment-b-1" class="cls-1"
+                                points="143.35 107.43 134.93 116.29 116.53 98.03 116.53 30.65 116.53 30.52 138.31 8.73 138.34 8.73 143.35 14.11 143.35 107.16" />
+                            <polyline id="segment-b-2" class="cls-1"
+                                points="128.5 .67 11.15 .67 8 4.31 8 9.15 8 9.33 25.68 28.43 114.55 28.43 135.72 7.26 135.53 7.06 128.96 .5" />
+                            <polyline id="segment-b-3" class="cls-1"
+                                points="143.29 127.41 134.44 119.05 121.31 132.14 121.31 200.49 139.52 217.22 143.35 213.6 143.35 213.55 143.35 127.54" />
+                            <polyline id="segment-b-4" class="cls-1"
+                                points="8.13 222.35 14.54 227.87 128.72 227.87 137.51 219.69 117.36 201.73 30.42 201.73 8.16 222.35" />
+                            <polyline id="segment-b-5" class="cls-1"
+                                points=".77 97.59 11.33 108.15 11.49 108.15 24.1 95.54 24.1 95.46 24.1 31.79 3.79 9.59 .54 13.68 .54 97.4" />
+                            <polyline id="segment-b-6" class="cls-1"
+                                points="113.88 100.9 24.1 100.9 13.84 111.16 13.81 111.16 28.48 127.35 121.31 127.35 130.97 117.69 130.92 117.64 114.06 101.04" />
+                            <polyline id="segment-b-7" class="cls-1"
+                                points=".67 123.71 11.34 113.48 11.33 113.43 26.45 130.44 26.45 200.76 26.45 200.93 5.33 220.23 5.39 220.23 .5 216.6 .5 123.95" />
+                        </g>
+                    </svg>
+                </div>
+
+                <div id="clock-minute-value2" class="clock-digit">
+                    <svg id="segment-b" data-name="segment-b" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 143.85 228.37">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: none;
+                                    stroke: #000;
+                                    stroke-linecap: round;
+                                    stroke-linejoin: round;
+                                }
+                            </style>
+                        </defs>
+                        <g id="segment-b">
+                            <polyline id="segment-b-1" class="cls-1"
+                                points="143.35 107.43 134.93 116.29 116.53 98.03 116.53 30.65 116.53 30.52 138.31 8.73 138.34 8.73 143.35 14.11 143.35 107.16" />
+                            <polyline id="segment-b-2" class="cls-1"
+                                points="128.5 .67 11.15 .67 8 4.31 8 9.15 8 9.33 25.68 28.43 114.55 28.43 135.72 7.26 135.53 7.06 128.96 .5" />
+                            <polyline id="segment-b-3" class="cls-1"
+                                points="143.29 127.41 134.44 119.05 121.31 132.14 121.31 200.49 139.52 217.22 143.35 213.6 143.35 213.55 143.35 127.54" />
+                            <polyline id="segment-b-4" class="cls-1"
+                                points="8.13 222.35 14.54 227.87 128.72 227.87 137.51 219.69 117.36 201.73 30.42 201.73 8.16 222.35" />
+                            <polyline id="segment-b-5" class="cls-1"
+                                points=".77 97.59 11.33 108.15 11.49 108.15 24.1 95.54 24.1 95.46 24.1 31.79 3.79 9.59 .54 13.68 .54 97.4" />
+                            <polyline id="segment-b-6" class="cls-1"
+                                points="113.88 100.9 24.1 100.9 13.84 111.16 13.81 111.16 28.48 127.35 121.31 127.35 130.97 117.69 130.92 117.64 114.06 101.04" />
+                            <polyline id="segment-b-7" class="cls-1"
+                                points=".67 123.71 11.34 113.48 11.33 113.43 26.45 130.44 26.45 200.76 26.45 200.93 5.33 220.23 5.39 220.23 .5 216.6 .5 123.95" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
