@@ -112,7 +112,72 @@
             </div>
             <div id="clock-upside-separate"></div>
             <div id="clock-dayofweek">
-                <span id="clock-dayofweek-value">木</span>
+                <div id="clock-dayofweek-matrix" class="show-sat">
+                    <div class="dayofweek-segment" id="dayofweek-segment-1">
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-1-1"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-1-2"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-1-3"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-1-4"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-1-5"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-1-6"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-1-7"></div>
+                    </div>
+                    <div class="dayofweek-segment" id="dayofweek-segment-2">
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-2-1"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-2-2"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-2-3"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-2-4"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-2-5"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-2-6"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-2-7"></div>
+                    </div>
+                    <div class="dayofweek-segment" id="dayofweek-segment-3">
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-3-1"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-3-2"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-3-3"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-3-4"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-3-5"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-3-6"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-3-7"></div>
+                    </div>
+                    <div class="dayofweek-segment" id="dayofweek-segment-4">
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-4-1"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-4-2"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-4-3"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-4-4"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-4-5"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-4-6"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-4-7"></div>
+                    </div>
+                    <div class="dayofweek-segment" id="dayofweek-segment-5">
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-5-1"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-5-2"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-5-3"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-5-4"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-5-5"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-5-6"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-5-7"></div>
+                    </div>
+                    <div class="dayofweek-segment" id="dayofweek-segment-6">
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-6-1"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-6-2"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-6-3"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-6-4"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-6-5"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-6-6"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-6-7"></div>
+                    </div>
+                    <div class="dayofweek-segment" id="dayofweek-segment-7">
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-7-1"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-7-2"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-7-3"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-7-4"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-7-5"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-7-6"></div>
+                        <div class="dayofweek-segment-inner" id="dayofweek-segment-7-7"></div>
+                    </div>
+                </div>
+                <!-- <span id="clock-dayofweek-value">木</span> -->
             </div>
         </div>
         <div id="clock-downside">
@@ -179,7 +244,10 @@
                         </g>
                     </svg>
                 </div>
-                <span id="clock-temp-unit">°C</span>
+                <div id="clock-temp-unit">
+                    <span id="temp-unit-degree">°</span>
+                    <span id="temp-unit-letter">C</span>
+                </div>
             </div>
             <div id="clock-downside-separate"></div>
             <div id="clock-time">
@@ -247,7 +315,10 @@
                         </g>
                     </svg>
                 </div>
-                <span id="clock-colon" class="clock-digit">:</span>
+                <div id="clock-colon" class="clock-digit">
+                    <div id="clock-colon-top"></div>
+                    <div id="clock-colon-bottom"></div>
+                </div>
                 <!-- <span id="clock-minute" class="clock-digit">58</span> -->
                  <div id="clock-minute-value1" class="clock-digit">
                     <svg id="segment-b" data-name="segment-b" xmlns="http://www.w3.org/2000/svg"
