@@ -42,17 +42,30 @@ window.onload = function () {
         // 時の表示
         setSegmentB("clock-hour-value1", Math.floor(hour / 10));
         setSegmentB("clock-hour-value2", hour % 10);
+
         // 分の表示
         setSegmentB("clock-minute-value1", Math.floor(minute / 10));
         setSegmentB("clock-minute-value2", minute % 10);
 
+        // 気温の表示
+        // 前回の取得から10分以上経過している場合にのみ、気温を更新する
+        const lastUpdated = localStorage.getItem("lastWeatherUpdate");
+        if (!lastUpdated || now.getTime() - parseInt(lastUpdated) > 600000) {
+            const temperature = await fetchWeather();
+            setSegmentB("clock-temp-value1", Math.floor(temperature / 10));
+            setSegmentB("clock-temp-value2", Math.floor(temperature % 10));
+            localStorage.setItem("lastWeatherUpdate", now.getTime().toString());
+            localStorage.setItem("saveTemperature", temperature.toString());
+        } else {
+            // 前回の取得から10分以上経過していない場合は、前回の気温を表示する
+            const temperature = localStorage.getItem("saveTemperature");
+            setSegmentB("clock-temp-value1", Math.floor(temperature / 10));
+            setSegmentB("clock-temp-value2", Math.floor(temperature % 10));
+        }
 
+        blinkColon();
 
-        const temperature = await fetchWeather();
-        setSegmentB("clock-temp-value1", Math.floor(temperature / 10));
-        setSegmentB("clock-temp-value2", Math.floor(temperature % 10));
-
-
+        setTimeout(updateClock, 1000);
     }
 
 }
@@ -73,6 +86,7 @@ function setSegmentA2(id, num) {
     const segmenta2_set_11 = [1, 2, 3, 4];
     const segmenta2_set_12 = [1, 3, 4, 6, 7, 9, 12];
 
+    // 16進数表示Ver
     // const segmenta2_set_10 = [1, 2, 3, 4, 7, 8, 9, 10];
     // const segmenta2_set_11 = [2, 3, 4, 9, 10, 11, 12];
     // const segmenta2_set_12 = [3, 4, 7, 8, 11, 12];
@@ -145,16 +159,28 @@ function setDayOfWeek(num) {
 
 // 天気情報を取得する関数
 async function fetchWeather() {
-    // 緯度・経度
     const latitude = 35.6895;
     const longitude = 139.6917;
 
-    // Open-MeteoのAPI URL
+    // Open-Meteo
     const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
 
-    // APIからデータを取得
     const response = await fetch(apiUrl);
     const data = await response.json();
 
     return data.current_weather.temperature;
+}
+
+function blinkColon() {
+    const colon1 = document.getElementById("clock-colon-top");
+    const colon2 = document.getElementById("clock-colon-bottom");
+
+    if (colon1.style.visibility === "hidden") {
+        colon1.style.visibility = "visible";
+        colon2.style.visibility = "visible";
+    }
+    else {
+        colon1.style.visibility = "hidden";
+        colon2.style.visibility = "hidden";
+    }
 }
