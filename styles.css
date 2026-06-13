@@ -36,6 +36,8 @@ body {
     left: 1svw;
 }
 
+/* 7セグメントの場合 */
+
 #clock-date-1 #segment-a-1 {
     fill: #94dfbc !important;
 }
@@ -64,6 +66,68 @@ body {
 #clock-date-1 #segment-a-7 {
     fill: #37c45a !important;
 }
+
+/* 12セグメントの場合 */
+
+/* 本編登場部 */
+
+#clock-date-1 #segment-a2-1 {
+    fill: #94dfbc !important;
+}
+
+#clock-date-1 #segment-a2-2 {
+    fill: #75b63f !important;
+}
+
+#clock-date-1 #segment-a2-3 {
+    fill: #e4fd56 !important;
+}
+
+#clock-date-1 #segment-a2-7 {
+    fill: #b3df4c !important;
+}
+
+#clock-date-1 #segment-a2-8 {
+    fill: #b3df4c !important;
+}
+
+#clock-date-1 #segment-a2-9 {
+    fill: #63cfbe !important;
+}
+
+#clock-date-1 #segment-a2-10 {
+    fill: #63cfbe !important;
+}
+
+#clock-date-1 #segment-a2-11 {
+    fill: #c3efda !important;
+}
+
+#clock-date-1 #segment-a2-12 {
+    fill: #c3efda !important;
+}
+
+
+
+/* 推測の値 */
+#clock-date-1 #segment-a2-4 {
+    fill: #37c45a !important;
+}
+
+
+#clock-date-1 #segment-a2-5 {
+    fill: #a3be26 !important;
+}
+
+#clock-date-1 #segment-a2-6 {
+    fill: #10912c !important;
+}
+
+
+
+
+
+
 
 #clock-date-slash {
     position: absolute;
