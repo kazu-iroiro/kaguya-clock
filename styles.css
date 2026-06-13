@@ -19,8 +19,6 @@ body {
     display: flex;
     width: 100%;
     height: 65%;
-    border-bottom: 0.5svw solid #712f85;
-
 }
 
 .date-digit {
@@ -40,6 +38,7 @@ body {
 
 #clock-date-1 #segment-a-1 {
     fill: #94dfbc !important;
+    
 }
 
 #clock-date-1 #segment-a-2 {
@@ -73,38 +72,47 @@ body {
 
 #clock-date-1 #segment-a2-1 {
     fill: #94dfbc !important;
+    stroke: #94dfbc !important;
 }
 
 #clock-date-1 #segment-a2-2 {
     fill: #75b63f !important;
+    stroke: #75b63f !important;
 }
 
 #clock-date-1 #segment-a2-3 {
     fill: #e4fd56 !important;
+    stroke: #e4fd56 !important;
 }
 
 #clock-date-1 #segment-a2-7 {
     fill: #b3df4c !important;
+    stroke: #b3df4c !important;
 }
 
 #clock-date-1 #segment-a2-8 {
     fill: #b3df4c !important;
+    stroke: #b3df4c !important;
 }
 
 #clock-date-1 #segment-a2-9 {
     fill: #63cfbe !important;
+    stroke: #63cfbe !important;
 }
 
 #clock-date-1 #segment-a2-10 {
     fill: #63cfbe !important;
+    stroke: #63cfbe !important;
 }
 
 #clock-date-1 #segment-a2-11 {
     fill: #c3efda !important;
+    stroke: #c3efda !important;
 }
 
 #clock-date-1 #segment-a2-12 {
     fill: #c3efda !important;
+    stroke: #c3efda !important;
 }
 
 
@@ -112,15 +120,18 @@ body {
 /* 推測の値 */
 #clock-date-1 #segment-a2-4 {
     fill: #37c45a !important;
+    stroke: #37c45a !important;
 }
 
 
 #clock-date-1 #segment-a2-5 {
     fill: #a3be26 !important;
+    stroke: #a3be26 !important;
 }
 
 #clock-date-1 #segment-a2-6 {
     fill: #10912c !important;
+    stroke: #10912c !important;
 }
 
 
@@ -131,12 +142,16 @@ body {
 
 #clock-date-slash {
     position: absolute;
-    left: 25svw;
-    width: 0.25svw;
-    height: 90%;
+    left: 28.5svw;
+    top: 4svw;
+    width: 1svw;
+    height: 85%;
     margin: auto 0;
     transform: scaleX(75%);
-    color: #2dd4cc;
+    rotate: 18deg;
+    /* color: #2dd4cc; */
+    background-color: #2dd4cc;
+    border-radius: 0.5svw;
 }
 
 #clock-date-2 {
@@ -157,31 +172,38 @@ body {
 
 #clock-date-2 #segment-b-1 {
     fill: #a688ee !important;
+    stroke: #a688ee !important;
 }
 
 #clock-date-2 #segment-b-3 {
     fill: #c83aec !important;
+    stroke: #c83aec !important;
 }
 
 /* 推測の値 */
 #clock-date-2 #segment-b-2 {
     fill: #55a4f3 !important;
+    stroke: #55a4f3 !important;
 }
 
 #clock-date-2 #segment-b-4 {
     fill: #309aaf !important;
+    stroke: #309aaf !important;
 }
 
 #clock-date-2 #segment-b-5 {
     fill: #80b6e9 !important;
+    stroke: #80b6e9 !important;
 }
 
 #clock-date-2 #segment-b-6 {
     fill: #6d56d3 !important;
+    stroke: #6d56d3 !important;
 }
 
 #clock-date-2 #segment-b-7 {
     fill: #7da2c1 !important;
+    stroke: #7da2c1 !important;
 }
 
 
@@ -191,32 +213,39 @@ body {
 
 #clock-date-3 #segment-b-1 {
     fill: #e9b880 !important;
+    stroke: #e9b880 !important;
 }
 
 #clock-date-3 #segment-b-2 {
     fill: #db9691 !important;
+    stroke: #db9691 !important;
 }
 
 #clock-date-3 #segment-b-4 {
     fill: #5639a9 !important;
+    stroke: #5639a9 !important;
 }
 
 #clock-date-3 #segment-b-6 {
     fill: #e592b5 !important;
+    stroke: #e592b5 !important;
 }
 
 #clock-date-3 #segment-b-7 {
     fill: #ae3de8 !important;
+    stroke: #ae3de8 !important;
 }
 
 /* 推測の値 */
 
 #clock-date-3 #segment-b-3 {
     fill: #ea864c !important;
+    stroke: #ea864c !important;
 }
 
 #clock-date-3 #segment-b-5 {
     fill: #c17db0 !important;
+    stroke: #c17db0 !important;
 }
 
 
@@ -228,15 +257,16 @@ body {
 #segment-b-6,
 #segment-b-7 {
     fill: #bbbbbb2c;
+    stroke: #bbbbbb2c;
 }
 
 #clock-upside-separate {
     position: absolute;
     right: 20svw;
-    width: 0.3svw;
+    width: 0.4svw;
     height: 90%;
     top: 2svw;
-    background-color: #3c1a49;
+    background: linear-gradient(to bottom, #bf7ab0, #9842f4);
 }
 
 #clock-dayofweek-matrix {
@@ -246,7 +276,7 @@ body {
     height: 18svw;
     /* background-color: #171717; */
     right: 0.25svw;
-    top: 19.25svw;
+    top: 16.5svw;
 }
 
 .dayofweek-segment {
@@ -658,6 +688,24 @@ body {
     visibility: visible;
 }
 
+#clock-separate {
+    width: 98svw;
+    height: 0.5svh;
+    margin: auto;
+    display: flex;
+}
+
+#clock-separate-left {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #b15eea, #e977dc);
+}
+
+#clock-separate-right {
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, #b15eea, #e977dc);
+}
 
 
 #clock-downside {
@@ -776,7 +824,7 @@ body {
     position: absolute;
     width: 0.5svw;
     height: 70%;
-    background-color: #7c4797;
+    background-color: #a857d1;
     left: 41svw;
     top: 3svw;
     margin: auto 0;
