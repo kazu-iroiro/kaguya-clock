@@ -1,4 +1,17 @@
 window.onload = function () {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+            .then(
+                function (registration) {
+                    if (typeof registration.update == 'function') {
+                        registration.update();
+                    }
+                })
+            .catch(function (error) {
+                console.log("Error Log: " + error);
+            });
+
+    }
 
     // 要素の取得
     const clock = document.getElementById("clock");
