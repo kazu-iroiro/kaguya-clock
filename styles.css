@@ -11,6 +11,9 @@ body {
     display: block;
     width: 100vw;
     height: 56.25vw;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #clock-upside {
@@ -37,7 +40,7 @@ body {
 
 #clock-date-1 #segment-a-1 {
     fill: #94dfbc !important;
-    
+
 }
 
 #clock-date-1 #segment-a-2 {
