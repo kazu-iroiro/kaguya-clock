@@ -1055,11 +1055,11 @@ body {
 
 .dialog-logo {
     position: absolute;
-    top: -12svw;
+    top: 5svw;
     left: 50%;
     transform: translateX(-50%);
-    width: 60svw;
-    height: 40svw;
+    width: 45svw;
+    /* height: 40svw; */
 }
 
 .tutorial-content ul {
