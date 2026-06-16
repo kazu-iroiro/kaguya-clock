@@ -1,4 +1,4 @@
-var CACHE_NAME = "sw-cache-v1-3";
+var CACHE_NAME = "sw-cache-v1-4";
 
 var urlsToCache = [
     "/",
@@ -19,6 +19,7 @@ const CACHE_KEYS = [
 ];
 
 self.addEventListener('install', function (event) {
+    self.skipWaiting();
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(
@@ -41,6 +42,7 @@ self.addEventListener('activate', event => {
             );
         })
     );
+    return self.clients.claim();
 });
 
 self.addEventListener('fetch', function (event) {
