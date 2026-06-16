@@ -3,10 +3,17 @@ let installPrompt = null;
 window.addEventListener("beforeinstallprompt", (event) => {
     event.preventDefault();
     installPrompt = event;
-    
+
+    const pwa_install_comment_1 = document.getElementById("can-pwa-install-by-button");
+    const pwa_install_comment_2 = document.getElementById("cannot-pwa-install-by-button");
     const pwaBtn = document.getElementById("pwa-install");
     if (pwaBtn) {
         pwaBtn.removeAttribute("hidden");
+        pwa_install_comment_2.style.display = "none";
+        pwa_install_comment_1.style.display = "list-item";
+    } else {
+        pwa_install_comment_1.style.display = "none";
+        pwa_install_comment_2.style.display = "list-item";
     }
 });
 
@@ -53,10 +60,6 @@ window.onload = function () {
     const tutorial_dialog2 = document.getElementById("tutorial-dialog2");
     const tutorial_dialog3 = document.getElementById("tutorial-dialog3");
 
-    const pwa_install_comment_1 = document.getElementById("can-pwa-install-by-button");
-    const pwa_install_comment_2 = document.getElementById("cannot-pwa-install-by-button");
-
-
     // ボタンにイベントリスナーを追加
     dialog_button_1.addEventListener("click", function () {
         switchDialog(tutorial_dialog1, tutorial_dialog2, true);
@@ -78,9 +81,6 @@ window.onload = function () {
 
     if (installPrompt) {
         dialog_button_6.removeAttribute("hidden");
-        pwa_install_comment_2.style.display = "none";
-    } else {
-        pwa_install_comment_1.style.display = "none";
     }
 
     dialog_button_6.addEventListener("click", async function () {
@@ -127,7 +127,7 @@ window.onload = function () {
     if (finTutorial === null) {
         localStorage.setItem("fin-tutorial", "false");
     }
-    
+
     if (finTutorial === "false" || finTutorial === null) {
         tutorial_dialog1.style.visibility = "visible";
     }
@@ -406,22 +406,22 @@ function switchDialog(currentDialog, nextDialog, inner_only = false) {
 function adjustScale() {
     const currentWidth = window.innerWidth;
     const currentHeight = window.innerHeight;
-    
+
     const targetHeight = currentWidth * 0.5625;
 
     document.body.style.margin = "0";
     document.body.style.width = "100vw";
     document.body.style.height = "100vh";
-    
+
     document.body.style.display = "flex";
     document.body.style.justifyContent = "center";
     document.body.style.alignItems = "center";
 
     if (currentHeight < targetHeight) {
         const scaleRate = currentHeight / targetHeight;
-        
+
         document.body.style.transform = `scale(${scaleRate})`;
-        document.body.style.transformOrigin = 'center center'; 
+        document.body.style.transformOrigin = 'center center';
     } else {
         document.body.style.transform = 'scale(1)';
         document.body.style.transformOrigin = 'center center';
