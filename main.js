@@ -402,3 +402,31 @@ function switchDialog(currentDialog, nextDialog, inner_only = false) {
         }, 250);
     }
 }
+
+function adjustScale() {
+    const currentWidth = window.innerWidth;
+    const currentHeight = window.innerHeight;
+    
+    const targetHeight = currentWidth * 0.5625;
+
+    document.body.style.margin = "0";
+    document.body.style.width = "100vw";
+    document.body.style.height = "100vh";
+    
+    document.body.style.display = "flex";
+    document.body.style.justifyContent = "center";
+    document.body.style.alignItems = "center";
+
+    if (currentHeight < targetHeight) {
+        const scaleRate = currentHeight / targetHeight;
+        
+        document.body.style.transform = `scale(${scaleRate})`;
+        document.body.style.transformOrigin = 'center center'; 
+    } else {
+        document.body.style.transform = 'scale(1)';
+        document.body.style.transformOrigin = 'center center';
+    }
+}
+
+window.addEventListener('DOMContentLoaded', adjustScale);
+window.addEventListener('resize', adjustScale);
