@@ -300,8 +300,8 @@ function setDayOfWeek(num) {
 
 // 天気情報を取得する関数
 async function fetchWeather() {
-    const latitude = localStorage.getItem("latitude") || 35.6983863;
-    const longitude = localStorage.getItem("longitude") || 139.4119972;
+    const latitude = localStorage.getItem("latitude") || findArea("立川").latitude;
+    const longitude = localStorage.getItem("longitude") || findArea("立川").longitude;
 
     // Open-Meteo
     const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
