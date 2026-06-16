@@ -24,15 +24,15 @@ body {
 }
 
 .date-digit {
-    font-size: 40vw;
-    line-height: 1;
+    /* font-size: 40vw;
+    line-height: 1; */
     width: 21svw;
 
 }
 
 #clock-date-1 {
     position: absolute;
-    top: 1.5svw;
+    top: 3svw;
     left: 1svw;
 }
 
@@ -56,13 +56,13 @@ body {
 
 #clock-date-2 {
     position: absolute;
-    top: 1.5svw;
+    top: 3svw;
     left: 36svw;
 }
 
 #clock-date-3 {
     position: absolute;
-    top: 1.5svw;
+    top: 3svw;
     left: 57.5svw;
 }
 
