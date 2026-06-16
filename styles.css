@@ -1113,6 +1113,10 @@ body {
     color: #0000007b;
 }
 
+.tutorial-content li a {
+    color: #000000;
+}
+
 .dialog-button-container {
     position: absolute;
     bottom: 5%;
