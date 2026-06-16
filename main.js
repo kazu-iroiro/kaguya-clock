@@ -1,3 +1,15 @@
+let installPrompt = null;
+
+window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault();
+    installPrompt = event;
+    
+    const pwaBtn = document.getElementById("pwa-install");
+    if (pwaBtn) {
+        pwaBtn.removeAttribute("hidden");
+    }
+});
+
 window.onload = function () {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js')
@@ -29,6 +41,128 @@ window.onload = function () {
 
     const disp_minute_1 = document.getElementById("clock-minute-value1");
     const disp_minute_2 = document.getElementById("clock-minute-value2");
+
+    const dialog_button_1 = document.getElementById("tutorial-to-page2");
+    const dialog_button_2 = document.getElementById("back-to-page1");
+    const dialog_button_3 = document.getElementById("close-tutorial");
+    const dialog_button_4 = document.getElementById("next-to-pwa-install");
+    const dialog_button_5 = document.getElementById("back-to-page2");
+    const dialog_button_6 = document.getElementById("pwa-install");
+
+    const tutorial_dialog1 = document.getElementById("tutorial-dialog1");
+    const tutorial_dialog2 = document.getElementById("tutorial-dialog2");
+    const tutorial_dialog3 = document.getElementById("tutorial-dialog3");
+
+    const pwa_install_comment_1 = document.getElementById("can-pwa-install-by-button");
+    const pwa_install_comment_2 = document.getElementById("cannot-pwa-install-by-button");
+
+
+    // ボタンにイベントリスナーを追加
+    dialog_button_1.addEventListener("click", function () {
+        switchDialog(tutorial_dialog1, tutorial_dialog2, true);
+    });
+    dialog_button_2.addEventListener("click", function () {
+        switchDialog(tutorial_dialog2, tutorial_dialog1, true);
+    });
+    dialog_button_3.addEventListener("click", function () {
+        switchDialog(tutorial_dialog2, null, false);
+        localStorage.setItem("fin-tutorial", "true");
+    });
+    dialog_button_4.addEventListener("click", function () {
+        switchDialog(tutorial_dialog2, tutorial_dialog3, true);
+    });
+    dialog_button_5.addEventListener("click", function () {
+        switchDialog(tutorial_dialog3, tutorial_dialog2, true);
+    });
+
+
+    if (installPrompt) {
+        dialog_button_6.removeAttribute("hidden");
+        pwa_install_comment_2.style.display = "none";
+    } else {
+        pwa_install_comment_1.style.display = "none";
+    }
+
+    dialog_button_6.addEventListener("click", async function () {
+        if (!installPrompt) {
+            console.log("Install prompt is not available.");
+            return;
+        }
+
+        installPrompt.prompt();
+
+        localStorage.setItem("fin-tutorial", "true");
+
+        const { outcome } = await installPrompt.userChoice;
+        console.log(`Install prompt was: ${outcome}`);
+
+        installPrompt = null;
+        dialog_button_6.setAttribute("hidden", "");
+    });
+
+    clock.addEventListener("click", function () {
+        tutorial_dialog1.style.visibility = "visible";
+        tutorial_dialog1.classList.remove('fade-out');
+        tutorial_dialog1.classList.remove('fade-in');
+        tutorial_dialog1.querySelectorAll("ul, button").forEach(el => {
+            el.classList.remove('fade-out');
+        });
+
+        void tutorial_dialog1.offsetWidth;
+
+        tutorial_dialog1.classList.add('fade-in');
+    });
+
+    // 気温の地点情報取得・変更
+    const placeSelect = document.getElementById("location-select");
+    const latitudeInput = document.getElementById("latitude-input");
+    const longitudeInput = document.getElementById("longitude-input");
+
+    // 初期化時にlocalStorageから保存された値を読み込む
+    const finTutorial = localStorage.getItem("fin-tutorial");
+    const savedPlace = localStorage.getItem("selectedPlace");
+    const savedLatitude = localStorage.getItem("latitude");
+    const savedLongitude = localStorage.getItem("longitude");
+
+    if (finTutorial === null) {
+        localStorage.setItem("fin-tutorial", "false");
+    }
+    
+    if (finTutorial === "false" || finTutorial === null) {
+        tutorial_dialog1.style.visibility = "visible";
+    }
+
+    if (savedPlace) {
+        placeSelect.value = savedPlace;
+    }
+    if (savedLatitude && savedLongitude) {
+        latitudeInput.value = savedLatitude;
+        longitudeInput.value = savedLongitude;
+        latitudeInput.disabled = true;
+        longitudeInput.disabled = true;
+    }
+
+    placeSelect.addEventListener("change", function () {
+        const selectedPlace = placeSelect.value;
+        const area = findArea(selectedPlace);
+        if (area) {
+            latitudeInput.value = area.latitude;
+            longitudeInput.value = area.longitude;
+            latitudeInput.disabled = true;
+            longitudeInput.disabled = true;
+        } else {
+            // 緯度経度の入力欄のdisableを解除して、値を空にする
+            latitudeInput.value = "";
+            longitudeInput.value = "";
+            latitudeInput.disabled = false;
+            longitudeInput.disabled = false;
+        }
+
+        // localStorageに保存
+        localStorage.setItem("selectedPlace", selectedPlace);
+        localStorage.setItem("latitude", latitudeInput.value);
+        localStorage.setItem("longitude", longitudeInput.value);
+    });
 
     updateClock();
 
@@ -172,8 +306,8 @@ function setDayOfWeek(num) {
 
 // 天気情報を取得する関数
 async function fetchWeather() {
-    const latitude = 35.6895;
-    const longitude = 139.6917;
+    const latitude = localStorage.getItem("latitude") || 35.6983863;
+    const longitude = localStorage.getItem("longitude") || 139.4119972;
 
     // Open-Meteo
     const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
@@ -195,5 +329,76 @@ function blinkColon() {
     else {
         colon1.style.visibility = "hidden";
         colon2.style.visibility = "hidden";
+    }
+}
+
+function findArea(name) {
+    const data = [
+        { name: "立川", latitude: 35.6983863, longitude: 139.4119972 },
+        { name: "札幌", latitude: 43.0620958, longitude: 141.3543763 },
+        { name: "仙台", latitude: 38.2688396, longitude: 140.8721036 },
+        { name: "東京", latitude: 35.6983863, longitude: 139.4119972 },
+        { name: "名古屋", latitude: 35.180188, longitude: 136.906565 },
+        { name: "大阪", latitude: 34.6937378, longitude: 135.5021651 },
+        { name: "広島", latitude: 34.385203, longitude: 132.455293 },
+        { name: "松山", latitude: 33.8391667, longitude: 132.7655556 },
+        { name: "福岡", latitude: 33.5903551, longitude: 130.4017159 },
+        { name: "那覇", latitude: 26.2124015, longitude: 127.680931 }
+    ];
+
+    // リスト中にnameと一致するものがあれば、その緯度経度を返す
+    for (const area of data) {
+        if (area.name === name) {
+            return { latitude: area.latitude, longitude: area.longitude };
+        }
+    }
+
+    // 一致するものがなければnullを返す
+    return null;
+
+}
+
+function switchDialog(currentDialog, nextDialog, inner_only = false) {
+    if (inner_only) {
+        const currentTargets = currentDialog.querySelectorAll("ul, .dialog-button-container");
+
+        currentTargets.forEach(el => {
+            el.classList.remove('fade-in');
+            el.classList.add('fade-out');
+        });
+
+        setTimeout(() => {
+            currentDialog.style.visibility = "hidden";
+
+            if (nextDialog) {
+                nextDialog.style.visibility = "visible";
+                nextDialog.classList.remove('fade-out', 'fade-in');
+                const nextElements = nextDialog.querySelectorAll("ul, .dialog-button-container");
+
+                nextElements.forEach(element => {
+                    element.classList.remove('fade-out', 'fade-in');
+                    void element.offsetWidth;
+                    element.classList.add('fade-in');
+                });
+            }
+        }, 250);
+
+    } else {
+        currentDialog.classList.remove('fade-in');
+        currentDialog.classList.add('fade-out');
+
+        setTimeout(() => {
+            currentDialog.style.visibility = "hidden";
+
+            if (nextDialog) {
+                nextDialog.style.visibility = "visible";
+                nextDialog.classList.remove('fade-out', 'fade-in');
+                nextDialog.querySelectorAll("ul, .dialog-button-container").forEach(element => {
+                    element.classList.remove('fade-out');
+                });
+                void nextDialog.offsetWidth;
+                nextDialog.classList.add('fade-in');
+            }
+        }, 250);
     }
 }

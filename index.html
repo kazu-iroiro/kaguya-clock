@@ -406,6 +406,66 @@
             </div>
         </div>
     </main>
+    <div class="tutorial-dialog fade-in" id="tutorial-dialog1">
+        <div class="tutorial-content">
+            <img class="dialog-logo" src="images/resources/logo.svg">
+            <ul>
+                <li>本編で登場したデジタル時計を再現しました</li>
+                <li>気温情報はOpen-Meteoから取得しています</li>
+                <li>Cloudflareのアクセス解析を利用しています</li>
+                <li>ソースコードはGitHubで公開しています</li>
+            </ul>
+            <button class="dialog-button" id="tutorial-to-page2">つぎへ</button>
+            <span class="dialog-sign">Recreated by kazu_iroiro</span>
+        </div>
+    </div>
+    <div class="tutorial-dialog" id="tutorial-dialog2">
+        <div class="tutorial-content fade-in">
+            <img class="dialog-logo" src="images/resources/logo.svg">
+            <ul>
+                <li>PWAとしてインストールすると、全画面で表示できます</li>
+                <li>取得する気温の地点：
+                    <select id="location-select">
+                        <option value="立川">立川</option>
+                        <option value="札幌">札幌</option>
+                        <option value="仙台">仙台</option>
+                        <option value="東京">東京</option>
+                        <option value="名古屋">名古屋</option>
+                        <option value="大阪">大阪</option>
+                        <option value="広島">広島</option>
+                        <option value="松山">松山</option>
+                        <option value="福岡">福岡</option>
+                        <option value="那覇">那覇</option>
+                        <option value="カスタム">カスタム</option>
+                    </select>
+                    <br>
+                    緯度: <input class="place-input" type="number" id="latitude-input" step="0.01" value="35.7152" disabled>, 経度: <input class="place-input" type="number"
+                        id="longitude-input" step="0.01" value="139.4072" disabled>
+                </li>
+                <li>この画面はタップ or クリックで再表示できます</li>
+            </ul>
+            <div class="dialog-button-container">
+                <button class="dialog-button" id="back-to-page1">もどる</button>
+                <button class="dialog-button" id="close-tutorial">そのままはじめる</button>
+                <button class="dialog-button" id="next-to-pwa-install">PWAをインストール</button>
+            </div>
+            <span class="dialog-sign"></span>
+        </div>
+    </div>
+    <div class="tutorial-dialog" id="tutorial-dialog3">
+        <div class="tutorial-content">
+            <img class="dialog-logo" src="images/resources/logo.svg">
+            <ul>
+                <li id="can-pwa-install-by-button">インストールボタンをクリックしてください</li>
+                <li id="cannot-pwa-install-by-button">共有ボタンからホーム画面へ追加を選択してください</li>
+            </ul>
+            <div class="dialog-button-container">
+                <button class="dialog-button" id="back-to-page2">もどる</button>
+                <button class="dialog-button" id="pwa-install" hidden>インストール</button>
+            </div>
+            <span class="dialog-sign"></span>
+        </div>
+    </div>
     <script src="main.js" language="javascript"></script>
 
     <!-- Cloudflare Web Analytics -->

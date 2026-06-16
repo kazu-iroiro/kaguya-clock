@@ -1016,3 +1016,213 @@ body {
 #clock-minute-value2 #segment-b-7 {
     fill: #f4c6b1 !important;
 }
+
+.tutorial-dialog {
+    position: absolute;
+    width: 60svw;
+    height: 40svw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 247, 0.98);
+    color: #000000;
+    text-align: center;
+    padding: 2svw;
+    border-radius: 2svw;
+    border: 0.5svw solid #e2d09aae;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+
+}
+
+#tutorial-dialog1 {
+    /* display: none; */
+    visibility: hidden;
+}
+
+#tutorial-dialog2 {
+    /* display: none; */
+    visibility: hidden;
+}
+
+#tutorial-dialog3 {
+    /* display: none; */
+    visibility: hidden;
+}
+
+
+.dialog-logo {
+    position: absolute;
+    top: -12svw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60svw;
+    height: 40svw;
+}
+
+.tutorial-content ul {
+    /* list-style: none; */
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 10%;
+    margin-bottom: 0;
+    text-align: left;
+    list-style-type: square;
+
+    animation: fade-in 0.25s;
+    animation-fill-mode: forwards;
+}
+
+.tutorial-content li {
+    font-size: 2svw;
+    margin-bottom: 1svw;
+    position: relative;
+    color: #000000;
+}
+
+.tutorial-content li::marker {
+    width: 1.5svw;
+    height: 1.5svw;
+}
+
+.tutorial-content button {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1svw 2svw;
+    font-size: 2svw;
+    background-color: #e2d09aae;
+    border: none;
+    border-radius: 1svw;
+    cursor: pointer;
+}
+
+.tutorial-content .dialog-sign {
+    position: absolute;
+    bottom: 1svw;
+    right: 2svw;
+    font-size: 1.5svw;
+    color: #0000007b;
+}
+
+.dialog-button-container {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    width: 100%;
+    height: 15%;
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #000; */
+    gap: 2svw;
+}
+
+.dialog-button {
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s, scale 0.2s;
+    box-shadow: 0px 5px 0px #b3ba74;
+}
+
+.dialog-button:hover {
+    background-color: rgba(255, 232, 29, 0.843);
+    box-shadow: 0px 0px 0px #b3ba74;
+
+    /* transform: translateY(-10svw); */
+    scale: 0.99;
+}
+
+#tutorial-to-page2 {
+    width: 25svw;
+}
+
+#back-to-page1 {
+    width: 10svw;
+    position: absolute;
+    left: 10%;
+}
+
+/* ダイアログ中のスタイル */
+.tutorial-content select {
+    font-size: 2svw;
+    background-color: rgba(255, 255, 247, 0.98);
+    border: 0.25svw solid #80755fae;
+    border-radius: 0.5svw;
+}
+
+.tutorial-content input {
+    margin-top: 1svw;
+    font-size: 2svw;
+    width: 10.5svw;
+    background-color: rgba(255, 255, 247, 0.98);
+    border: 0.25svw solid #80755fae;
+    border-radius: 0.5svw;
+}
+
+
+#close-tutorial {
+    position: absolute;
+    left: 38%;
+    width: 20svw;
+}
+
+#next-to-pwa-install {
+    position: absolute;
+    left: 78.5%;
+    width: 25svw;
+}
+
+#back-to-page2 {
+    position: absolute;
+    left: 10%;
+    width: 10svw;
+}
+
+#pwa-install {
+    position: absolute;
+    left: 50%;
+    width: 25svw;
+}
+
+.place-input {
+    width: 20%;
+}
+
+#tutorial-dialog2 ul {
+    margin-left: 5svw;
+}
+
+.fade-in {
+    animation: fade-in 0.25s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fade-out 0.25s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
