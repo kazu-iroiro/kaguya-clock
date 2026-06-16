@@ -22,7 +22,7 @@ window.onload = function () {
         navigator.serviceWorker.register('sw.js')
             .then(
                 function (registration) {
-                    if (typeof registration.update == 'function') {
+                    if (typeof registration.update === "function") {
                         registration.update();
                     }
                 })
