@@ -335,15 +335,15 @@ function blinkColon() {
 function findArea(name) {
     const data = [
         { name: "立川", latitude: 35.6983863, longitude: 139.4119972 },
-        { name: "札幌", latitude: 43.0620958, longitude: 141.3543763 },
-        { name: "仙台", latitude: 38.2688396, longitude: 140.8721036 },
-        { name: "東京", latitude: 35.6983863, longitude: 139.4119972 },
-        { name: "名古屋", latitude: 35.180188, longitude: 136.906565 },
-        { name: "大阪", latitude: 34.6937378, longitude: 135.5021651 },
-        { name: "広島", latitude: 34.385203, longitude: 132.455293 },
-        { name: "松山", latitude: 33.8391667, longitude: 132.7655556 },
-        { name: "福岡", latitude: 33.5903551, longitude: 130.4017159 },
-        { name: "那覇", latitude: 26.2124015, longitude: 127.680931 }
+        { name: "札幌", latitude: 43.0736997, longitude: 141.3422968 },
+        { name: "仙台", latitude: 38.2536776, longitude: 140.8740725 },
+        { name: "東京", latitude: 35.7128933, longitude: 139.7596674 },
+        { name: "名古屋", latitude: 35.1542928, longitude: 136.9667901 },
+        { name: "大阪", latitude: 34.8210270, longitude: 135.5227468 },
+        { name: "広島", latitude: 34.3985176, longitude: 132.7115982 },
+        { name: "松山", latitude: 33.8524660, longitude: 132.7743677 },
+        { name: "福岡", latitude: 33.5603602, longitude: 130.4305085 },
+        { name: "沖縄", latitude: 26.2527118, longitude: 127.7649552 }
     ];
 
     // リスト中にnameと一致するものがあれば、その緯度経度を返す
