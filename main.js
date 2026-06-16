@@ -238,9 +238,6 @@ function setSegmentA2(id, num) {
     // const segmenta2_set_11 = [2, 3, 4, 9, 10, 11, 12];
     // const segmenta2_set_12 = [3, 4, 7, 8, 11, 12];
 
-
-    // console.log(eval("segmenta2_set_" + num));
-
     // idに対応するオブジェクトのid:"segment-a2-*"をvisibleにする
     for (let i = 1; i <= 12; i++) {
         var segment = document.getElementById("segment-a2-" + i);
@@ -264,9 +261,6 @@ function setSegmentB(id, num) {
     const segmentb_set_7 = [1, 2, 3, 5];
     const segmentb_set_8 = [1, 2, 3, 4, 5, 6, 7];
     const segmentb_set_9 = [1, 2, 3, 4, 5, 6];
-
-
-    // console.log(eval("segmentb_set_" + num));
 
     const container = document.getElementById(id);
     if (!container) {
