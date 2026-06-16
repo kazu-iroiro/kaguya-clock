@@ -1,4 +1,4 @@
-var CACHE_NAME = "sw-cache-v1-5";
+var CACHE_NAME = "sw-cache-v1-6";
 
 var urlsToCache = [
     "/",
@@ -7,6 +7,7 @@ var urlsToCache = [
     "favicon.ico",
     "manifest.json",
     "styles.css",
+    "segments.css",
     "main.js",
     "images/resources/icon-128.png",
     "images/resources/icon-192.png",
