@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.onload = function () {
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js')
+        navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' })
             .then(
                 function (registration) {
                     if (typeof registration.update === "function") {
