@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const msgAlready = document.getElementById("pwa-already-installed");
     const msgSecretMode = document.getElementById("pwa-secret-mode-warning");
 
-    const isRunningInPWA = window.matchMedia('(display-mode: standalone)').matches || 
-                        window.matchMedia('(display-mode: fullscreen)').matches || 
-                        window.navigator.standalone === true;
+    const isRunningInPWA = window.matchMedia('(display-mode: standalone)').matches ||
+        window.matchMedia('(display-mode: fullscreen)').matches ||
+        window.navigator.standalone === true;
 
     if (isRunningInPWA) {
         if (msgAlready) msgAlready.style.display = "list-item";
@@ -27,11 +27,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
-                  (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.userAgent.includes("Mac") && "ontouchend" in document);
 
     if (isIOS) {
         if (msgCannot) msgCannot.style.display = "list-item";
+        return;
     }
 
     if (pwaBtn) {
@@ -54,16 +55,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             msgSecretMode.style.display = "list-item";
         }
     }, 1500);
+});
 
-    window.addEventListener("beforeinstallprompt", (event) => {
-        event.preventDefault();
-        installPrompt = event;
+window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault();
+    installPrompt = event;
 
-        if (pwaBtn) pwaBtn.style.display = "block";
-        if (msgCan) msgCan.style.display = "list-item";
-        if (msgCannot) msgCannot.style.display = "none";
-        if (msgAlready) msgAlready.style.display = "none";
-    });
+    if (pwaBtn) pwaBtn.style.display = "block";
+    if (msgCan) msgCan.style.display = "list-item";
+    if (msgCannot) msgCannot.style.display = "none";
+    if (msgAlready) msgAlready.style.display = "none";
 });
 
 window.onload = function () {
