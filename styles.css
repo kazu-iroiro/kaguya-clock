@@ -420,7 +420,15 @@ body {
     display: none;
 }
 
+#cannot-pwa-install-by-button {
+    display: none;
+}
+
 #pwa-already-installed {
+    display: none;
+}
+
+#pwa-secret-mode-warning {
     display: none;
 }
 

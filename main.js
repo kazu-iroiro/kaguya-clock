@@ -1,18 +1,37 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     let installPrompt = null;
     const pwaBtn = document.getElementById("pwa-install");
     const msgCan = document.getElementById("can-pwa-install-by-button");
     const msgCannot = document.getElementById("cannot-pwa-install-by-button");
     const msgAlready = document.getElementById("pwa-already-installed");
+    const msgSecretMode = document.getElementById("pwa-secret-mode-warning");
 
-    const isInstalled = window.matchMedia('(display-mode: standalone)').matches || 
+    const isRunningInPWA = window.matchMedia('(display-mode: standalone)').matches || 
                         window.matchMedia('(display-mode: fullscreen)').matches || 
                         window.navigator.standalone === true;
 
-    if (isInstalled) {
-        if (msgCannot) msgCannot.style.display = "none";
+    if (isRunningInPWA) {
         if (msgAlready) msgAlready.style.display = "list-item";
         return;
+    }
+
+    if ('getInstalledRelatedApps' in navigator) {
+        try {
+            const relatedApps = await navigator.getInstalledRelatedApps();
+            if (relatedApps.length > 0) {
+                if (msgAlready) msgAlready.style.display = "list-item";
+                return;
+            }
+        } catch (e) {
+            console.log("getInstalledRelatedApps error:", e);
+        }
+    }
+
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                  (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+
+    if (isIOS) {
+        if (msgCannot) msgCannot.style.display = "list-item";
     }
 
     if (pwaBtn) {
@@ -29,6 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
             pwaBtn.style.display = "none";
         });
     }
+
+    setTimeout(() => {
+        if (!installPrompt && msgSecretMode) {
+            msgSecretMode.style.display = "list-item";
+        }
+    }, 1500);
 
     window.addEventListener("beforeinstallprompt", (event) => {
         event.preventDefault();
