@@ -5,7 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const msgCannot = document.getElementById("cannot-pwa-install-by-button");
     const msgAlready = document.getElementById("pwa-already-installed");
 
-    if (window.matchMedia('(display-mode: standalone)').matches) {
+    const isInstalled = window.matchMedia('(display-mode: standalone)').matches || 
+                        window.matchMedia('(display-mode: fullscreen)').matches || 
+                        window.navigator.standalone === true;
+
+    if (isInstalled) {
         if (msgCannot) msgCannot.style.display = "none";
         if (msgAlready) msgAlready.style.display = "list-item";
         return;
