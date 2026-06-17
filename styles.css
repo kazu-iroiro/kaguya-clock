@@ -416,10 +416,19 @@ body {
     width: 10svw;
 }
 
+#can-pwa-install-by-button {
+    display: none;
+}
+
+#pwa-already-installed {
+    display: none;
+}
+
 #pwa-install {
     position: absolute;
     left: 50%;
     width: 25svw;
+    display: none;
 }
 
 .place-input {

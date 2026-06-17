@@ -1,20 +1,40 @@
-let installPrompt = null;
-
-window.addEventListener("beforeinstallprompt", (event) => {
-    event.preventDefault();
-    installPrompt = event;
-
-    const pwa_install_comment_1 = document.getElementById("can-pwa-install-by-button");
-    const pwa_install_comment_2 = document.getElementById("cannot-pwa-install-by-button");
+document.addEventListener("DOMContentLoaded", () => {
+    let installPrompt = null;
     const pwaBtn = document.getElementById("pwa-install");
-    if (pwaBtn) {
-        pwaBtn.removeAttribute("hidden");
-        pwa_install_comment_2.style.display = "none";
-        pwa_install_comment_1.style.display = "list-item";
-    } else {
-        pwa_install_comment_1.style.display = "none";
-        pwa_install_comment_2.style.display = "list-item";
+    const msgCan = document.getElementById("can-pwa-install-by-button");
+    const msgCannot = document.getElementById("cannot-pwa-install-by-button");
+    const msgAlready = document.getElementById("pwa-already-installed");
+
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+        if (msgCannot) msgCannot.style.display = "none";
+        if (msgAlready) msgAlready.style.display = "list-item";
+        return;
     }
+
+    if (pwaBtn) {
+        pwaBtn.addEventListener("click", async function () {
+            if (!installPrompt) return;
+
+            installPrompt.prompt();
+            localStorage.setItem("fin-tutorial", "true");
+
+            const { outcome } = await installPrompt.userChoice;
+            console.log(`Install prompt was: ${outcome}`);
+
+            installPrompt = null;
+            pwaBtn.style.display = "none";
+        });
+    }
+
+    window.addEventListener("beforeinstallprompt", (event) => {
+        event.preventDefault();
+        installPrompt = event;
+
+        if (pwaBtn) pwaBtn.style.display = "block";
+        if (msgCan) msgCan.style.display = "list-item";
+        if (msgCannot) msgCannot.style.display = "none";
+        if (msgAlready) msgAlready.style.display = "none";
+    });
 });
 
 window.onload = function () {
@@ -76,28 +96,6 @@ window.onload = function () {
     });
     dialog_button_5.addEventListener("click", function () {
         switchDialog(tutorial_dialog3, tutorial_dialog2, true);
-    });
-
-
-    if (installPrompt) {
-        dialog_button_6.removeAttribute("hidden");
-    }
-
-    dialog_button_6.addEventListener("click", async function () {
-        if (!installPrompt) {
-            console.log("Install prompt is not available.");
-            return;
-        }
-
-        installPrompt.prompt();
-
-        localStorage.setItem("fin-tutorial", "true");
-
-        const { outcome } = await installPrompt.userChoice;
-        console.log(`Install prompt was: ${outcome}`);
-
-        installPrompt = null;
-        dialog_button_6.setAttribute("hidden", "");
     });
 
     clock.addEventListener("click", function () {
