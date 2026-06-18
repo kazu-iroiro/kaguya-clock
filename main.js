@@ -1,10 +1,16 @@
+let installPrompt = null;
+
 document.addEventListener("DOMContentLoaded", async () => {
-    let installPrompt = null;
     const pwaBtn = document.getElementById("pwa-install");
     const msgCan = document.getElementById("can-pwa-install-by-button");
     const msgCannot = document.getElementById("cannot-pwa-install-by-button");
     const msgAlready = document.getElementById("pwa-already-installed");
-    const msgSecretMode = document.getElementById("pwa-secret-mode-warning");
+    const msgPWAWarning = document.getElementsByClassName("pwa-warning");
+
+    if (installPrompt) {
+        if (pwaBtn) pwaBtn.style.display = "block";
+        if (msgCan) msgCan.style.display = "list-item";
+    }
 
     const isRunningInPWA = window.matchMedia('(display-mode: standalone)').matches ||
         window.matchMedia('(display-mode: fullscreen)').matches ||
@@ -47,12 +53,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             installPrompt = null;
             pwaBtn.style.display = "none";
+            if (msgCan) msgCan.style.display = "none";
         });
     }
 
     setTimeout(() => {
-        if (!installPrompt && msgSecretMode) {
-            msgSecretMode.style.display = "list-item";
+        if (!installPrompt && msgPWAWarning) {
+            for (let i = 0; i < msgPWAWarning.length; i++) {
+                msgPWAWarning[i].style.display = "list-item";
+            }
         }
     }, 1500);
 });
@@ -61,10 +70,21 @@ window.addEventListener("beforeinstallprompt", (event) => {
     event.preventDefault();
     installPrompt = event;
 
+    const pwaBtn = document.getElementById("pwa-install");
+    const msgCan = document.getElementById("can-pwa-install-by-button");
+    const msgCannot = document.getElementById("cannot-pwa-install-by-button");
+    const msgAlready = document.getElementById("pwa-already-installed");
+    const msgPWAWarning = document.getElementsByClassName("pwa-warning");
+
     if (pwaBtn) pwaBtn.style.display = "block";
     if (msgCan) msgCan.style.display = "list-item";
     if (msgCannot) msgCannot.style.display = "none";
     if (msgAlready) msgAlready.style.display = "none";
+    if (msgPWAWarning) {
+        for (let i = 0; i < msgPWAWarning.length; i++) {
+            msgPWAWarning[i].style.display = "none";
+        }
+    }
 });
 
 window.onload = function () {

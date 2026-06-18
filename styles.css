@@ -428,7 +428,7 @@ body {
     display: none;
 }
 
-#pwa-secret-mode-warning {
+.pwa-warning {
     display: none;
 }
 
