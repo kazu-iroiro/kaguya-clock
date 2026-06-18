@@ -1,4 +1,5 @@
 let installPrompt = null;
+let clockclickinterval = null;
 
 document.addEventListener("DOMContentLoaded", async () => {
     const pwaBtn = document.getElementById("pwa-install");
@@ -149,16 +150,21 @@ window.onload = function () {
     });
 
     clock.addEventListener("click", function () {
-        tutorial_dialog1.style.visibility = "visible";
-        tutorial_dialog1.classList.remove('fade-out');
-        tutorial_dialog1.classList.remove('fade-in');
-        tutorial_dialog1.querySelectorAll("ul, button").forEach(el => {
-            el.classList.remove('fade-out');
-        });
+        if (clockclickinterval != null && Date.now() - clockclickinterval < 750) {
+            tutorial_dialog1.style.visibility = "visible";
+            tutorial_dialog1.classList.remove('fade-out');
+            tutorial_dialog1.classList.remove('fade-in');
+            tutorial_dialog1.querySelectorAll("ul, button").forEach(el => {
+                el.classList.remove('fade-out');
+            });
 
-        void tutorial_dialog1.offsetWidth;
+            void tutorial_dialog1.offsetWidth;
 
-        tutorial_dialog1.classList.add('fade-in');
+            tutorial_dialog1.classList.add('fade-in');
+
+        } else {
+            clockclickinterval = Date.now();
+        }
     });
 
     // 気温の地点情報取得・変更
