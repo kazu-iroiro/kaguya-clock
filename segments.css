@@ -613,6 +613,7 @@
 #clock-temp-value2 {
     position: absolute;
     left: 16svw;
+    width: 10.3svw;
 }
 
 #clock-temp-value2 #segment-a-2 {
@@ -719,6 +720,7 @@
 
 #clock-minute-value1 {
     margin-right: 0.5svw;
+    width: 10.3svw;
 }
 
 #clock-minute-value1 #segment-a-2 {
