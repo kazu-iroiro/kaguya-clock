@@ -216,6 +216,9 @@ window.onload = function () {
         localStorage.setItem("selectedPlace", selectedPlace);
         localStorage.setItem("latitude", latitudeInput.value);
         localStorage.setItem("longitude", longitudeInput.value);
+
+        // 保存されていた気温情報のフラッシュ
+        localStorage.removeItem("lastWeatherUpdate");
     });
 
     updateClock();
