@@ -245,7 +245,7 @@ window.onload = function () {
         setSegmentB("clock-hour-value2", hour % 10);
 
         // 分の表示
-        setSegmentB("clock-minute-value1", Math.floor(minute / 10));
+        setSegmentA("clock-minute-value1", Math.floor(minute / 10));
         setSegmentB("clock-minute-value2", minute % 10);
 
         // 気温の表示
@@ -254,14 +254,14 @@ window.onload = function () {
         if (!lastUpdated || now.getTime() - parseInt(lastUpdated) > 600000) {
             const temperature = await fetchWeather();
             setSegmentB("clock-temp-value1", Math.floor(temperature / 10));
-            setSegmentB("clock-temp-value2", Math.floor(temperature % 10));
+            setSegmentA("clock-temp-value2", Math.floor(temperature % 10));
             localStorage.setItem("lastWeatherUpdate", now.getTime().toString());
             localStorage.setItem("saveTemperature", temperature.toString());
         } else {
             // 前回の取得から10分以上経過していない場合は、前回の気温を表示する
             const temperature = localStorage.getItem("saveTemperature");
             setSegmentB("clock-temp-value1", Math.floor(temperature / 10));
-            setSegmentB("clock-temp-value2", Math.floor(temperature % 10));
+            setSegmentA("clock-temp-value2", Math.floor(temperature % 10));
         }
 
         blinkColon();
@@ -269,6 +269,32 @@ window.onload = function () {
         setTimeout(updateClock, 1000);
     }
 
+}
+
+// segment-aの場合
+function setSegmentA(id, num) {
+    const segmenta_set_0 = [1, 2, 3, 4, 5, 7];
+    const segmenta_set_1 = [1, 3];
+    const segmenta_set_2 = [1, 2, 4, 6, 7];
+    const segmenta_set_3 = [1, 2, 3, 4, 6];
+    const segmenta_set_4 = [1, 3, 5, 6];
+    const segmenta_set_5 = [2, 3, 4, 5, 6];
+    const segmenta_set_6 = [2, 3, 4, 5, 6, 7];
+    const segmenta_set_7 = [1, 2, 3, 5];
+    const segmenta_set_8 = [1, 2, 3, 4, 5, 6, 7];
+    const segmenta_set_9 = [1, 2, 3, 4, 5, 6];
+
+    const parentElement = document.getElementById(id);
+
+    // idに対応するオブジェクトのid:"segment-a-*"をvisibleにする
+    for (let i = 1; i <= 7; i++) {
+        var segment = parentElement.querySelector("#segment-a-" + i);
+        if (eval("segmenta_set_" + num).includes(i)) {
+            segment.style.visibility = "visible";
+        } else {
+            segment.style.visibility = "hidden";
+        }
+    }
 }
 
 // segment-a2の場合

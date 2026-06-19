@@ -615,33 +615,33 @@
     left: 16svw;
 }
 
-#clock-temp-value2 #segment-b-2 {
+#clock-temp-value2 #segment-a-2 {
     fill: #9ced40 !important;
 }
 
-#clock-temp-value2 #segment-b-3 {
+#clock-temp-value2 #segment-a-3 {
     fill: #01b8dc !important;
 }
 
-#clock-temp-value2 #segment-b-4 {
+#clock-temp-value2 #segment-a-4 {
     fill: #21d7be !important;
 }
 
-#clock-temp-value2 #segment-b-5 {
+#clock-temp-value2 #segment-a-5 {
     fill: #cde546 !important;
 }
 
-#clock-temp-value2 #segment-b-6 {
+#clock-temp-value2 #segment-a-6 {
     fill: #8ae132 !important;
 }
 
 /* 推測の値 */
 
-#clock-temp-value2 #segment-b-1 {
+#clock-temp-value2 #segment-a-1 {
     fill: #35a551 !important;
 }
 
-#clock-temp-value2 #segment-b-7 {
+#clock-temp-value2 #segment-a-7 {
     fill: #5db140 !important;
 }
 
@@ -719,35 +719,34 @@
 
 #clock-minute-value1 {
     margin-right: 0.5svw;
-
 }
 
-#clock-minute-value1 #segment-b-2 {
+#clock-minute-value1 #segment-a-2 {
     fill: #7961f2 !important;
 }
 
-#clock-minute-value1 #segment-b-3 {
+#clock-minute-value1 #segment-a-3 {
     fill: #e494bb !important;
 }
 
-#clock-minute-value1 #segment-b-4 {
+#clock-minute-value1 #segment-a-4 {
     fill: #ecacbf !important;
 }
 
-#clock-minute-value1 #segment-b-5 {
+#clock-minute-value1 #segment-a-5 {
     fill: #4669f1 !important;
 }
 
-#clock-minute-value1 #segment-b-6 {
+#clock-minute-value1 #segment-a-6 {
     fill: #a95ae3 !important;
 }
 
 /* 推測の値 */
-#clock-minute-value1 #segment-b-1 {
+#clock-minute-value1 #segment-a-1 {
     fill: #db8e67 !important;
 }
 
-#clock-minute-value1 #segment-b-7 {
+#clock-minute-value1 #segment-a-7 {
     fill: #9472d4 !important;
 }
 
