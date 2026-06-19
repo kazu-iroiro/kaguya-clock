@@ -233,7 +233,6 @@ window.onload = function () {
         const minute = now.getMinutes();
 
         // 月の表示
-
         setSegmentA2(disp_month, month);
 
         // 日の表示
@@ -256,15 +255,13 @@ window.onload = function () {
         const lastUpdated = localStorage.getItem("lastWeatherUpdate");
         if (!lastUpdated || now.getTime() - parseInt(lastUpdated) > 600000) {
             const temperature = await fetchWeather();
-            setSegmentB("clock-temp-value1", Math.floor(temperature / 10));
-            setSegmentA("clock-temp-value2", Math.floor(temperature % 10));
+            setTempValue(temperature);
             localStorage.setItem("lastWeatherUpdate", now.getTime().toString());
             localStorage.setItem("saveTemperature", temperature.toString());
         } else {
             // 前回の取得から10分以上経過していない場合は、前回の気温を表示する
             const temperature = localStorage.getItem("saveTemperature");
-            setSegmentB("clock-temp-value1", Math.floor(temperature / 10));
-            setSegmentA("clock-temp-value2", Math.floor(temperature % 10));
+            setTempValue(temperature);
         }
 
         blinkColon();
@@ -272,6 +269,11 @@ window.onload = function () {
         setTimeout(updateClock, 1000);
     }
 
+}
+
+function setTempValue(temperature) {
+    setSegmentB("clock-temp-value1", Math.floor(temperature / 10));
+    setSegmentA("clock-temp-value2", Math.floor(temperature % 10));
 }
 
 // segment-aの場合
