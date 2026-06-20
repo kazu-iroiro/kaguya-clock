@@ -1,4 +1,4 @@
-var CACHE_NAME = "sw-cache-v2-1";
+var CACHE_NAME = "sw-cache-v2-3";
 
 var urlsToCache = [
     "/",
